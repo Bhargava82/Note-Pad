@@ -1,8 +1,5 @@
 const express = require("express");
 const path = require("path");
-
-// Sets up the Express App
-// =============================================================
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -19,12 +16,12 @@ app.listen(PORT, function () {
 // VIEWS ROUTES
 //GET `/notes` - Should return the `notes.html` file.
 app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "notes"));
+  res.sendFile(path.join(__dirname, "notes.html"));
 });
 
 //GET `*` - Should return the `index.html` file
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "index"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 //API routes
